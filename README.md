@@ -1,6 +1,5 @@
 # Multi^2OIE: <u>Multi</u>lingual Open Information Extraction based on <u>Multi</u>-Head Attention with BERT
 
-> Accepted to the Findings of EMNLP2020 //
 > Source code for learning Multi^2OIE for (multilingual) open information extraction.
 
 ## Usage
