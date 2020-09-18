@@ -2,6 +2,10 @@
 
 > Source code for learning Multi^2OIE for (multilingual) open information extraction.
 
+## Paper
+[<u>Multi</u>lingual Open Information Extraction based on <u>Multi</u>-Head Attention with BERT](https://arxiv.org/abs/2009.08128)
+
+
 ## Usage
 
 ### Prerequisites
