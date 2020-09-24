@@ -38,6 +38,12 @@ Accepted to Findings of EMNLP, 2020. (*corresponding author)
     - Key-Value pairs: hidden states of predicate positions
 - Conduct token-level classification on the multi-head attention output sequence
 
+#### Multilingual Extraction
+
+- Replace English BERT to Multilingual BERT
+- Train the model only with English data
+- Test the model in three difference languages (English, Spanish, and Portuguese) in zero-shot manner.
+
 <br>
 
 
