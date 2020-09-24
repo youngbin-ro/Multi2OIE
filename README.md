@@ -7,6 +7,8 @@
 [Youngbin Ro](https://github.com/youngbin-ro), [Yukyung Lee](https://github.com/yukyunglee), and [Pilsung Kang](https://github.com/pilsung-kang)*<br>
 Accepted to Findings of EMNLP, 2020. (*corresponding author)
 
+<br>
+
 ## Overview
 ### What is Open Information Extraction (Open IE)?
 [Niklaus et al. (2018)](https://www.aclweb.org/anthology/C18-1326/) describes Open IE as follows:
@@ -26,13 +28,17 @@ Accepted to Findings of EMNLP, 2020. (*corresponding author)
 ![multi2oie_overview](https://github.com/youngbin-ro/Multi2OIE/blob/master/images/multi2oie_overview.PNG?raw=true)
 
 #### Step 1: Extract predicates (relations) from the input sentence using BERT
-- Use BIO Tagging for representing arguments and predicates
+- Conduct token-level classification on the BERT output sequence
+  - Use BIO Tagging for representing arguments and predicates
 
 #### Step 2: Extract arguments using multi-head attention blocks
 - Concatenate BERT whole hidden sequence, average vector of hidden sequence at predicate position, and binary embedding vector indicating the token is included in predicate span.
 - Apply multi-head attention operation over N times
     - Query: whole hidden sequence
     - Key-Value pairs: hidden states of predicate positions
+- Conduct token-level classification on the multi-head attention output sequence
+
+<br>
 
 
 ## Usage
@@ -96,7 +102,7 @@ python main.py [--FLAGS]
 python test.py [--FLAGS]
 ~~~~
 
-
+<br>
 
 ## Model Configurations
 
@@ -120,7 +126,7 @@ python test.py [--FLAGS]
 - gradient clipping norm: 1.0 (not tuned)
 - learning rate warm-up steps: 10% of total steps (not tuned)
 
-
+<br>
 
 ## Expected Results
 
@@ -150,7 +156,7 @@ python test.py [--FLAGS]
 - F1: 52.3
 - AUC: 32.6
 
-
+<br>
 
 ## References
 
