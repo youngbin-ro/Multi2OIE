@@ -7,6 +7,34 @@
 [Youngbin Ro](https://github.com/youngbin-ro), [Yukyung Lee](https://github.com/yukyunglee), and [Pilsung Kang](https://github.com/pilsung-kang)*<br>
 Accepted to Findings of EMNLP, 2020. (*corresponding author)
 
+## Overview
+### What is Open Information Extraction (Open IE)?
+[Niklaus et al. (2018)](https://www.aclweb.org/anthology/C18-1326/) describes Open IE as follows:
+
+> Information extraction (IE) **<u>turns the unstructured information expressed in natural language text into a structured representation</u>** in the form of relational tuples consisting of a set of arguments and a phrase denoting a semantic relation between them: <arg1; rel; arg2>. (...) Unlike traditional IE methods, Open IE is **<u>not limited to a small set of target relations</u>** known in advance, but rather extracts all types of relations found in a text.
+
+![openie_overview](https://github.com/youngbin-ro/Multi2OIE/blob/master/images/openie_overview.PNG?raw=true)
+
+#### Note
+- Systems adopting sequence generation scheme ([Cui et al., 2018](https://www.aclweb.org/anthology/P18-2065/); [Kolluru et al., 2020](https://www.aclweb.org/anthology/2020.acl-main.521/)) can extract (actually generate) relations outside of given texts.
+- Multi^2OIE, however, is adopting sequence labeling scheme ([Stanovsky et al., 2018](https://www.aclweb.org/anthology/N18-1081/)) for computational efficiency and multilingual ability
+
+
+
+### Our Approach
+
+![multi2oie_overview](https://github.com/youngbin-ro/Multi2OIE/blob/master/images/multi2oie_overview.PNG?raw=true)
+
+#### Step 1: Extract predicates (relations) from the input sentence using BERT
+- Use BIO Tagging for representing arguments and predicates
+
+#### Step 2: Extract arguments using multi-head attention blocks
+- Concatenate BERT whole hidden sequence, average vector of hidden sequence at predicate position, and binary embedding vector indicating the token is included in predicate span.
+- Apply multi-head attention operation over N times
+    - Query: whole hidden sequence
+    - Key-Value pairs: hidden states of predicate positions
+
+
 ## Usage
 
 ### Prerequisites
@@ -121,3 +149,11 @@ python test.py [--FLAGS]
 
 - F1: 52.3
 - AUC: 32.6
+
+
+
+## References
+
+- https://github.com/gabrielStanovsky/oie-benchmark
+- https://github.com/dair-iitd/CaRB
+- https://github.com/zhanjunlang/Span_OIE
