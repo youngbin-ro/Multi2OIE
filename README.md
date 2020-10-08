@@ -5,7 +5,7 @@
 ## Paper
 [**Multi^2OIE: <u>Multi</u>lingual Open Information Extraction Based on <u>Multi</u>-Head Attention with BERT**](https://arxiv.org/abs/2009.08128)<br>
 [Youngbin Ro](https://github.com/youngbin-ro), [Yukyung Lee](https://github.com/yukyunglee), and [Pilsung Kang](https://github.com/pilsung-kang)*<br>
-Accepted to Findings of EMNLP, 2020. (*corresponding author)
+Accepted to Findings of ACL: EMNLP 2020. (*corresponding author)
 
 <br>
 
